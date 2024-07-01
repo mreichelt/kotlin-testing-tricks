@@ -16,9 +16,9 @@ kotlin {
 }
 
 dependencies {
-    implementation("io.insert-koin:koin-core:3.5.6")
+    implementation(libs.koin)
 
     testImplementation(libs.junit)
     testImplementation(libs.assertk)
-    testImplementation("io.mockk:mockk:1.13.11")
+    testImplementation(libs.mockk)
 }

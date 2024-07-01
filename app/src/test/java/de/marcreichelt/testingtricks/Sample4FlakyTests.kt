@@ -15,4 +15,4 @@ class Sample4FlakyTests {
 // - show flaky test
 // - use repeat to increase chance to see failure
 // - rerun from command line: `./gradlew :app:testDebugUnitTest --tests "de.marcreichelt.testingtricks.Sample4FlakyTests.this test fails once every 100 times" --rerun`
-// - bonus: use `for i in {1..100}; do echo $i; ./gradlew … || break; done`
+// - bonus: use `for i in {1..20}; do echo $i; ./gradlew … || break; done`

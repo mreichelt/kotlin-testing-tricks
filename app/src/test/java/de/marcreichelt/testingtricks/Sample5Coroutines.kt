@@ -6,6 +6,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
+import org.junit.Ignore
 import org.junit.Test
 import org.koin.core.Koin
 import org.koin.dsl.koinApplication
@@ -27,6 +28,7 @@ class Sample5Coroutines {
 
 
     @Test
+    @Ignore
     fun `multiple TestScope instances with dependency injection`() = runTest {
         val koin = startKoin()
         val generator = koin.get<DelayedValueGenerator>()

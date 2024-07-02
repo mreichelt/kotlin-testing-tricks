@@ -27,6 +27,12 @@ android {
         unitTests {
             isIncludeAndroidResources = true
         }
+        unitTests.all { test ->
+            // turns out that demonstrating memory leaks + Robolectric + Paparazzi
+            // at the same time can take a little more memory ;)
+            test.maxHeapSize = "2g"
+            test.jvmArgs("-XX:MaxMetaspaceSize=3g")
+        }
     }
 
     buildTypes {
@@ -74,6 +80,14 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.robolectric)
     testImplementation(libs.coroutines.test)
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
+    testImplementation("org.hamcrest:hamcrest:2.2") {
+        because("to not get NoClassDefFoundError when using Roborazzi")
+    }
+    testImplementation("org.hamcrest:hamcrest-library:2.2") {
+        because("to not get NoClassDefFoundError when using Roborazzi")
+    }
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -6,10 +6,12 @@ import org.junit.Test
 import kotlin.random.Random
 
 class Sample4FlakyTests {
+
     @Test
     fun `this test fails once every 100 times`() {
         assertThat(Random.nextInt(100)).isNotEqualTo(0)
     }
+
 }
 
 // - show flaky test

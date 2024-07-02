@@ -10,9 +10,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
-import org.robolectric.annotation.experimental.LazyApplication
 
-@LazyApplication(LazyApplication.LazyLoad.ON)
 @RunWith(RobolectricTestRunner::class)
 class Sample6Robolectric {
 

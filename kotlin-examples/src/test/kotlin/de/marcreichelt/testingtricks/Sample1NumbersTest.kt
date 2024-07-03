@@ -14,12 +14,14 @@ class Sample1NumbersTest {
         assertThat(numbers).hasSize(1000)
     }
 
+
     @Test
     fun generateNumbers() {
         val numbersGenerator = NumbersGeneratorImpl()
         assertThat(numbersGenerator.generateNumbers(0)).isEmpty()
         assertThat(numbersGenerator.generateNumbers(3)).containsExactly(1, 2, 3)
     }
+
 
     @Test
     fun generateEvenNumbers() {

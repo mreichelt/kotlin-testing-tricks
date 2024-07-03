@@ -18,11 +18,11 @@ class Sample5Coroutines {
     @Test
     fun `multiple test scopes`() = runTest {
         val generator = DelayedValueGenerator(this)
-        assertThat(generator.number.value).isEqualTo(0)
 
         generator.compute()
-        delay(1.1.seconds)
+        assertThat(generator.number.value).isEqualTo(0)
 
+        delay(1.1.seconds)
         assertThat(generator.number.value).isEqualTo(42)
     }
 

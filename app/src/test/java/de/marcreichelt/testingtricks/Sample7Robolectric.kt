@@ -12,7 +12,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 
 @RunWith(RobolectricTestRunner::class)
-class Sample6Robolectric {
+class Sample7Robolectric {
 
     private val context = InstrumentationRegistry.getInstrumentation().context
     private fun getLocationManager() = context.getSystemService(LOCATION_SERVICE) as LocationManager

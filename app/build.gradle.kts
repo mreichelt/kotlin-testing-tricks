@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.paparazzi)
     alias(libs.plugins.roborazzi)
 }
 
@@ -28,8 +27,8 @@ android {
             isIncludeAndroidResources = true
         }
         unitTests.all { test ->
-            // turns out that demonstrating memory leaks + Robolectric + Paparazzi
-            // at the same time can take a little more memory ;)
+            // turns out that demonstrating memory leaks + Robolectric (+ Paparazzi in an
+            // earlier version) at the same time can take a little more memory ;-)
             test.maxHeapSize = "2g"
             test.jvmArgs("-XX:MaxMetaspaceSize=3g")
         }

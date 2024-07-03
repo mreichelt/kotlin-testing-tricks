@@ -26,6 +26,7 @@ class DelayedValueGenerator(
 
 }
 
+
 val delayedValueGeneratorModule = module {
     single<DelayedValueGenerator> { DelayedValueGenerator(get()) }
 }
